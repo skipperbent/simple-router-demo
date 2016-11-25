@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "7192dae4ed4d0dfffd89706df3db4dd5",
+    "content-hash": "f46d8242118e257247a8b646b9f61280",
+    "packages": [
+        {
+            "name": "pecee/simple-router",
+            "version": "2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skipperbent/simple-php-router.git",
+                "reference": "b5eef6f3ee34f01baf433a2dd4ca6968068abf49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/b5eef6f3ee34f01baf433a2dd4ca6968068abf49",
+                "reference": "b5eef6f3ee34f01baf433a2dd4ca6968068abf49",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.7.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pecee\\": "src/Pecee/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Sessingø",
+                    "email": "simon.sessingoe@gmail.com"
+                }
+            ],
+            "description": "Simple, fast PHP router that is easy to get integrated and in almost any project. Heavily inspired by the Laravel router.",
+            "keywords": [
+                "laravel",
+                "pecee",
+                "router",
+                "routing"
+            ],
+            "time": "2016-11-16 14:16:22"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": []
+}
