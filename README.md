@@ -1,6 +1,11 @@
 # Simple PHP router demo project
 
+## Notes
+
 This project is here to give you a basic understanding of how to setup and using simple-php-router.
+
+You can find the documentation for simple-php-router here:
+https://github.com/skipperbent/simple-php-router
 
 Please note that this demo-project only covers how to integrate the `simple-php-router` in a project without a framework. If you are using some sort of PHP framework in your project the implementation might vary.
 

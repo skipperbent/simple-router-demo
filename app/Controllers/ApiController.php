@@ -3,14 +3,12 @@ namespace Demo\Controllers;
 
 class ApiController
 {
-	public function index()
+	public function show()
 	{
 		// The variable authenticated is set to true in the ApiVerification middleware class.
-		header('content-type: application/json');
-
-		echo json_encode([
-			'authenticated' => request()->authenticated
-		]);
+		response()->json([
+            'authenticated' => request()->authenticated
+        ]);
 	}
 
 }
