@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7192dae4ed4d0dfffd89706df3db4dd5",
-    "content-hash": "f46d8242118e257247a8b646b9f61280",
+    "hash": "7a505bbff6d0baddad2ebd32cf94d382",
+    "content-hash": "b150b04406e974e423dffe01f6f98182",
     "packages": [
         {
             "name": "pecee/simple-router",
-            "version": "2.6.5",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "ed98519152909a462b199ddaf9fdbfb514c74f35"
+                "reference": "2654ca67db152d400e131cd7f6bcad292026f38a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/ed98519152909a462b199ddaf9fdbfb514c74f35",
-                "reference": "ed98519152909a462b199ddaf9fdbfb514c74f35",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/2654ca67db152d400e131cd7f6bcad292026f38a",
+                "reference": "2654ca67db152d400e131cd7f6bcad292026f38a",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2017-02-01 06:52:29"
+            "time": "2017-02-09 12:34:32"
         }
     ],
     "packages-dev": [],
