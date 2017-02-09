@@ -46,13 +46,14 @@ Nothing special is required for Apache to work. We've include the `.htaccess` fi
 
 | Folder        | Description |
 | ------------- |-------------|
-| app            |Contains projects-specific PHP classes|
+| routes         |Folder contains the files with our custom routes.|
+| app            |Contains projects-specific PHP classes.|
 | public         |Public folder which are accessible through the web.|
 
 ## Notes
 
-The demo project has it's own `Router` class implementation which extends the `SimpleRouter` class with further functionality. 
-This class can be useful adding additional functionality that are required before and after routing occurs or any extra functionality belonging to the router itself. 
+The demo project has it's own `Router` class implementation which extends the `SimpleRouter` class with further functionality.
+This class can be useful adding additional functionality that are required before and after routing occurs or any extra functionality belonging to the router itself.
 
 In this project we also use our custom router-class to autoload the `routes.php` file from our custom location (`app/routes.php`).
 
