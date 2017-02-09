@@ -3,7 +3,7 @@ namespace Demo\Controllers;
 
 class DefaultController
 {
-	public function index()
+	public function home()
 	{
 		// implement
 		echo sprintf('DefaultController -> index (?fun=%s)', input()->get('fun'));
@@ -19,9 +19,9 @@ class DefaultController
 		echo 'DefaultController -> companies -> id: ' . $id;
 	}
 
-	public function notFound()
-	{
-		echo 'Page not found';
-	}
+    public function notFound()
+    {
+        echo 'Page not found';
+    }
 
 }

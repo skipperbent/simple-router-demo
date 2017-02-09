@@ -1,6 +1,11 @@
 # Simple PHP router demo project
 
+## Notes
+
 This project is here to give you a basic understanding of how to setup and using simple-php-router.
+
+You can find the documentation for simple-php-router here:
+https://github.com/skipperbent/simple-php-router
 
 Please note that this demo-project only covers how to integrate the `simple-php-router` in a project without a framework. If you are using some sort of PHP framework in your project the implementation might vary.
 
@@ -41,13 +46,14 @@ Nothing special is required for Apache to work. We've include the `.htaccess` fi
 
 | Folder        | Description |
 | ------------- |-------------|
-| app            |Contains projects-specific PHP classes|
+| routes         |Folder contains the files with our custom routes.|
+| app            |Contains projects-specific PHP classes.|
 | public         |Public folder which are accessible through the web.|
 
 ## Notes
 
-The demo project has it's own `Router` class implementation which extends the `SimpleRouter` class with further functionality. 
-This class can be useful adding additional functionality that are required before and after routing occurs or any extra functionality belonging to the router itself. 
+The demo project has it's own `Router` class implementation which extends the `SimpleRouter` class with further functionality.
+This class can be useful adding additional functionality that are required before and after routing occurs or any extra functionality belonging to the router itself.
 
 In this project we also use our custom router-class to autoload the `routes.php` file from our custom location (`app/routes.php`).
 

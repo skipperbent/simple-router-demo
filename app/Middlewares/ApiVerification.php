@@ -3,11 +3,10 @@ namespace Demo\Middlewares;
 
 use Pecee\Http\Middleware\IMiddleware;
 use Pecee\Http\Request;
-use Pecee\SimpleRouter\Route\ILoadableRoute;
 
 class ApiVerification implements IMiddleware
 {
-	public function handle(Request $request, ILoadableRoute &$route)
+	public function handle(Request $request)
 	{
 		// Do authentication
 		$request->authenticated = true;

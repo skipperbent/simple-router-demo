@@ -15,7 +15,7 @@ class Router extends SimpleRouter
 		require_once 'helpers.php';
 
 		// Load our custom routes
-		require_once 'routes.php';
+		require_once '../routes/web.php';
 
 		parent::setDefaultNamespace('\Demo');
 

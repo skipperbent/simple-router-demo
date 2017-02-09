@@ -4,11 +4,10 @@ namespace Demo\Handlers;
 use Pecee\Handlers\IExceptionHandler;
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
-use Pecee\SimpleRouter\Route\ILoadableRoute;
 
 class CustomExceptionHandler implements IExceptionHandler
 {
-	public function handleError(Request $request, ILoadableRoute &$route = null, \Exception $error)
+	public function handleError(Request $request, \Exception $error)
 	{
 
 		/* You can use the exception handler to format errors depending on the request and type. */
@@ -32,7 +31,7 @@ class CustomExceptionHandler implements IExceptionHandler
 			 * The code below will make the router render our page.notfound route.
 			 */
 
-			$request->setUri(url('page.notfound'));
+			$request->setRewriteCallback('Demo\Controllers\DefaultController@notFound');
 			return $request;
 
 		}
