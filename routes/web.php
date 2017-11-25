@@ -7,7 +7,7 @@ use Demo\Router;
 
 Router::csrfVerifier(new \Demo\Middlewares\CsrfVerifier());
 
-Router::group(['namespace' => 'Demo\Controllers', 'exceptionHandler' => 'Demo\Handlers\CustomExceptionHandler'], function () {
+Router::group(['namespace' => 'Demo\Controllers', 'exceptionHandler' => \Demo\Handlers\CustomExceptionHandler::class], function () {
 
 	Router::get('/', 'DefaultController@home')->setName('home');
 
@@ -15,9 +15,20 @@ Router::group(['namespace' => 'Demo\Controllers', 'exceptionHandler' => 'Demo\Ha
 
 	Router::basic('/companies/{id?}', 'DefaultController@companies')->setName('companies');
 
-	// Api
-	Router::group(['prefix' => '/api', 'middleware' => 'Demo\Middlewares\ApiVerification'], function () {
+    // API
+
+	Router::group(['prefix' => '/api', 'middleware' => \Demo\Middlewares\ApiVerification::class], function () {
 		Router::resource('/demo', 'ApiController');
 	});
+
+    // CALLBACK EXAMPLES
+
+    Router::get('/foo', function() {
+        return 'foo';
+    });
+
+    Router::get('/foo-bar', function() {
+        return 'foo-bar';
+    });
 
 });

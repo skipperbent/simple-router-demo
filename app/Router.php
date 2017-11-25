@@ -9,7 +9,7 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 class Router extends SimpleRouter
 {
-	public static function start($defaultNamespace = null)
+	public static function start()
 	{
 		// Load our helpers
 		require_once 'helpers.php';
