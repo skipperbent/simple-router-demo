@@ -7,7 +7,7 @@ use Demo\Router;
 
 Router::csrfVerifier(new \Demo\Middlewares\CsrfVerifier());
 
-Router::group(['namespace' => 'Demo\Controllers', 'exceptionHandler' => \Demo\Handlers\CustomExceptionHandler::class], function () {
+Router::group(['namespace' => '\Demo\Controllers', 'exceptionHandler' => \Demo\Handlers\CustomExceptionHandler::class], function () {
 
 	Router::get('/', 'DefaultController@home')->setName('home');
 

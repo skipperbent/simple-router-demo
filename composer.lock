@@ -117,16 +117,16 @@
         },
         {
             "name": "pecee/simple-router",
-            "version": "4.0.0.6",
+            "version": "4.0.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "e97e624cefc684839070a65eee4282eb32f05ddc"
+                "reference": "1d6a2fafff4c341a955d8bf6bee6a49a6d5ada2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/e97e624cefc684839070a65eee4282eb32f05ddc",
-                "reference": "e97e624cefc684839070a65eee4282eb32f05ddc",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/1d6a2fafff4c341a955d8bf6bee6a49a6d5ada2b",
+                "reference": "1d6a2fafff4c341a955d8bf6bee6a49a6d5ada2b",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +168,7 @@
                 "simple-php-router",
                 "url-handling"
             ],
-            "time": "2018-03-29T21:14:22+00:00"
+            "time": "2018-03-29T21:28:47+00:00"
         },
         {
             "name": "php-di/invoker",
