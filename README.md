@@ -1,4 +1,4 @@
-# Simple PHP router demo project
+# simple-router demo project
 
 ## Notes
 
@@ -7,7 +7,7 @@ This project is here to give you a basic understanding of how to setup and using
 You can find the documentation for simple-php-router here:
 https://github.com/skipperbent/simple-php-router
 
-Please note that this demo-project only covers how to integrate the `simple-php-router` in a project without a framework. If you are using some sort of PHP framework in your project the implementation might vary.
+Please note that this demo-project only covers how to integrate the `simple-router` in a project without a framework. If you are using some sort of PHP framework in your project the implementation might vary.
 
 **What we won't cover:**
 
@@ -85,7 +85,7 @@ Please see `routes.php` for all routes and rules.
 
 ## The MIT License (MIT)
 
-Copyright (c) 2016 Simon Sessingø / simple-php-router
+Copyright (c) 2016 Simon Sessingø / simple-router
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

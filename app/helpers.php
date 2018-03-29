@@ -1,5 +1,9 @@
 <?php
-use Pecee\SimpleRouter\SimpleRouter;
+
+use Pecee\SimpleRouter\SimpleRouter as Router;
+use Pecee\Http\Url;
+use Pecee\Http\Response;
+use Pecee\Http\Request;
 
 /**
  * Get url for a route by using either name/alias, class or method name.
@@ -16,43 +20,69 @@ use Pecee\SimpleRouter\SimpleRouter;
  * @param string|null $name
  * @param string|array|null $parameters
  * @param array|null $getParams
- * @return string
+ * @return \Pecee\Http\Url
+ * @throws \InvalidArgumentException
  */
-function url($name = null, $parameters = null, $getParams = null)
+function url(?string $name = null, $parameters = null, ?array $getParams = null): Url
 {
-    return SimpleRouter::getUrl($name, $parameters, $getParams);
+    return Router::getUrl($name, $parameters, $getParams);
 }
 
 /**
  * @return \Pecee\Http\Response
  */
-function response()
+function response(): Response
 {
-    return SimpleRouter::response();
+    return Router::response();
 }
 
 /**
  * @return \Pecee\Http\Request
  */
-function request()
+function request(): Request
 {
-    return SimpleRouter::request();
+    return Router::request();
 }
 
 /**
  * Get input class
- * @return \Pecee\Http\Input\Input
+ * @param string|null $index Parameter index name
+ * @param string|null $defaultValue Default return value
+ * @param array ...$methods Default methods
+ * @return \Pecee\Http\Input\InputHandler|\Pecee\Http\Input\IInputItem|string
  */
-function input()
+function input($index = null, $defaultValue = null, ...$methods)
 {
-    return request()->getInput();
+    if ($index !== null) {
+        return request()->getInputHandler()->getValue($index, $defaultValue, ...$methods);
+    }
+
+    return request()->getInputHandler();
 }
 
-function redirect($url, $code = null)
+/**
+ * @param string $url
+ * @param int|null $code
+ */
+function redirect(string $url, ?int $code = null): void
 {
     if ($code !== null) {
         response()->httpCode($code);
     }
 
     response()->redirect($url);
+}
+
+/**
+ * Get current csrf-token
+ * @return string|null
+ */
+function csrf_token(): ?string
+{
+    $baseVerifier = Router::router()->getCsrfVerifier();
+    if ($baseVerifier !== null) {
+        return $baseVerifier->getTokenProvider()->getToken();
+    }
+
+    return null;
 }

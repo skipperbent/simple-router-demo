@@ -1,18 +1,23 @@
 <?php
 namespace Demo\Handlers;
 
-use Pecee\Handlers\IExceptionHandler;
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
+use Pecee\SimpleRouter\Handlers\IExceptionHandler;
 
 class CustomExceptionHandler implements IExceptionHandler
 {
-	public function handleError(Request $request, \Exception $error)
+    /**
+     * @param Request $request
+     * @param \Exception $error
+     * @throws \Exception
+     */
+    public function handleError(Request $request, \Exception $error): void
 	{
 
 		/* You can use the exception handler to format errors depending on the request and type. */
 
-		if (stripos($request->getUri(), '/api') !== false) {
+		if ($request->getUrl()->contains('/api')) {
 
 			response()->json([
 				'error' => $error->getMessage(),
@@ -32,7 +37,7 @@ class CustomExceptionHandler implements IExceptionHandler
 			 */
 
 			$request->setRewriteCallback('Controllers\DefaultController@notFound');
-			return $request;
+			return;
 
 		}
 

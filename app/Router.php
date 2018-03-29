@@ -9,7 +9,13 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 class Router extends SimpleRouter
 {
-	public static function start()
+    /**
+     * @throws \Exception
+     * @throws \Pecee\Http\Middleware\Exceptions\TokenMismatchException
+     * @throws \Pecee\SimpleRouter\Exceptions\HttpException
+     * @throws \Pecee\SimpleRouter\Exceptions\NotFoundHttpException
+     */
+    public static function start(): void
 	{
 		// Load our helpers
 		require_once 'helpers.php';

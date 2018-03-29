@@ -3,10 +3,14 @@ namespace Demo\Controllers;
 
 class ApiController
 {
-	public function show()
+    /**
+     * @return string
+     * @throws \Pecee\Exceptions\InvalidArgumentException
+     */
+    public function show(): string
 	{
 		// The variable authenticated is set to true in the ApiVerification middleware class.
-		response()->json([
+		return response()->json([
             'authenticated' => request()->authenticated
         ]);
 	}
