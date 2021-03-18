@@ -23,6 +23,11 @@ Please note that this demo-project only covers how to integrate the `simple-rout
 
 ## Installation
 
+- Install `simple-php-router` library with composer by running
+```
+composer install
+```
+
 - Navigate to the `demo-project` folder in terminal and run `composer update` to install the latest version.
 - Point your webserver to `demo-project/public`.
 
