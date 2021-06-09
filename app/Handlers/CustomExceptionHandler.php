@@ -36,7 +36,7 @@ class CustomExceptionHandler implements IExceptionHandler
 			 * The code below will make the router render our page.notfound route.
 			 */
 
-			$request->setRewriteCallback('Controllers\DefaultController@notFound');
+			$request->setRewriteCallback('DefaultController@notFound');
 			return;
 
 		}
