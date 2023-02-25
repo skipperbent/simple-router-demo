@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Handlers;
 
 use Pecee\Http\Request;
@@ -13,36 +14,36 @@ class CustomExceptionHandler implements IExceptionHandler
      * @throws \Exception
      */
     public function handleError(Request $request, \Exception $error): void
-	{
+    {
 
-		/* You can use the exception handler to format errors depending on the request and type. */
+        /* You can use the exception handler to format errors depending on the request and type. */
 
-		if ($request->getUrl()->contains('/api')) {
+        if ($request->getUrl()->contains('/api')) {
 
-			response()->json([
-				'error' => $error->getMessage(),
-				'code'  => $error->getCode(),
-			]);
+            response()->json([
+                'error' => $error->getMessage(),
+                'code' => $error->getCode(),
+            ]);
 
-		}
+        }
 
-		/* The router will throw the NotFoundHttpException on 404 */
-		if($error instanceof NotFoundHttpException) {
+        /* The router will throw the NotFoundHttpException on 404 */
+        if ($error instanceof NotFoundHttpException) {
 
-			/*
-			 * Render your own custom 404-view, rewrite the request to another route,
-			 * or simply return the $request object to ignore the error and continue on rendering the route.
-			 *
-			 * The code below will make the router render our page.notfound route.
-			 */
+            /*
+             * Render your own custom 404-view, rewrite the request to another route,
+             * or simply return the $request object to ignore the error and continue on rendering the route.
+             *
+             * The code below will make the router render our page.notfound route.
+             */
 
-			$request->setRewriteCallback('DefaultController@notFound');
-			return;
+            $request->setRewriteCallback('DefaultController@notFound');
+            return;
 
-		}
+        }
 
-		throw $error;
+        throw $error;
 
-	}
+    }
 
 }

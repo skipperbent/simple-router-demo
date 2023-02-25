@@ -6,43 +6,31 @@ use Pecee\Controllers\IResourceController;
 class ApiController implements IResourceController
 {
     /**
-     * @return string
      * @throws \Pecee\Exceptions\InvalidArgumentException
      */
-    public function show($id): string
+    public function show($id): void
 	{
 		// The variable authenticated is set to true in the ApiVerification middleware class.
-		return response()->json([
+		response()->json([
             'authenticated' => request()->authenticated
         ]);
 	}
 
-    /**
-     * @return string|null
-     */
-    public function index(): ?string
+    public function index(): void
     {
-        return response()->json([
-            'method' => 'index'
-        ]);
+        throw new \ErrorException('This is an exception thrown');
     }
 
-    /**
-     * @return string|null
-     */
-    public function store(): ?string
+    public function store(): void
     {
-        return response()->json([
+        response()->json([
             'method' => 'store'
         ]);
     }
 
-    /**
-     * @return string|null
-     */
-    public function create(): ?string
+    public function create(): void
     {
-        return response()->json([
+        response()->json([
             'method' => 'create'
         ]);
     }
@@ -50,33 +38,30 @@ class ApiController implements IResourceController
     /**
      * View
      * @param mixed $id
-     * @return string|null
      */
-    public function edit($id): ?string
+    public function edit($id): void
     {
-        return response()->json([
+        response()->json([
             'method' => sprintf('edit: %s', $id),
         ]);
     }
 
     /**
      * @param mixed $id
-     * @return string|null
      */
-    public function update($id): ?string
+    public function update($id): void
     {
-        return response()->json([
+        response()->json([
             'method' => sprintf('update: %s', $id),
         ]);
     }
 
     /**
      * @param mixed $id
-     * @return string|null
      */
-    public function destroy($id): ?string
+    public function destroy($id): void
     {
-        return response()->json([
+        response()->json([
             'method' => sprintf('destroy: %s', $id),
         ]);
     }
