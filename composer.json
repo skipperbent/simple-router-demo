@@ -10,7 +10,7 @@
 	"type": "project",
 	"require": {
 		"php": ">=7.1",
-		"pecee/simple-router": "^4.0"
+		"pecee/simple-router": "^5.0"
 	},
 	"require-dev": {
 

@@ -3,33 +3,31 @@
  * This file contains all the routes for the project
  */
 
-use Demo\Router;
+use Pecee\SimpleRouter\SimpleRouter;
 
-Router::csrfVerifier(new \Demo\Middlewares\CsrfVerifier());
+SimpleRouter::csrfVerifier(new \Demo\Middlewares\CsrfVerifier());
 
-Router::setDefaultNamespace('\Demo\Controllers');
+\Pecee\SimpleRouter\SimpleRouter::setDefaultNamespace('Demo\\Controllers');
 
-Router::group(['exceptionHandler' => \Demo\Handlers\CustomExceptionHandler::class], function () {
+SimpleRouter::group(['exceptionHandler' => \Demo\Handlers\CustomExceptionHandler::class], function () {
 
-	Router::get('/', 'DefaultController@home')->setName('home');
-
-	Router::get('/contact', 'DefaultController@contact')->setName('contact');
-
-	Router::basic('/companies/{id?}', 'DefaultController@companies')->setName('companies');
+    SimpleRouter::get('/', 'DefaultController@home')->name('home');
+    SimpleRouter::get('/contact', 'DefaultController@contact')->name('contact');
+    SimpleRouter::basic('/companies/{id?}', 'DefaultController@companies')->name('companies');
 
     // API
 
-	Router::group(['prefix' => '/api', 'middleware' => \Demo\Middlewares\ApiVerification::class], function () {
-		Router::resource('/demo', 'ApiController');
+    SimpleRouter::group(['prefix' => '/api', 'middleware' => \Demo\Middlewares\ApiVerification::class], function () {
+        SimpleRouter::resource('/demo', 'ApiController');
 	});
 
     // CALLBACK EXAMPLES
 
-    Router::get('/foo', function() {
+    SimpleRouter::get('/foo', function() {
         return 'foo';
     });
 
-    Router::get('/foo-bar', function() {
+    SimpleRouter::get('/foo-bar', function() {
         return 'foo-bar';
     });
 
